@@ -109,7 +109,8 @@ public static void main (String[] args)
 						}
 					case 4:
 					default:
-						System.exit(0);
+									   {run = false;System.exit(0);}
+						
 				}
 		}
 
