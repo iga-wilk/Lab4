@@ -92,10 +92,11 @@ public static void main (String[] args)
 								String miejscowosc = rs.getString("miejscowosc");
 								
 								System.out.println(id_uzytkownika+" "+imie+" "+nazwisko+ ", "+miejscowosc+" "+rok );} 
-								catch (SQLException e) {
+								
+							}
+							catch (SQLException e) {
            					    		   e.printStackTrace();
                								}break;
-							}
 						}
 					case 3: 
 						{
