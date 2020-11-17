@@ -76,7 +76,7 @@ public static void main (String[] args)
 					case 2: 
 						{
 							String select1 = "Select * from czytelnicy";
-							Statement st (Statement)= conn.createStatement();
+							Statement st = (Statement) conn.createStatement();
 							ResultSet rs = st.executeQuery(select1);
 							System.out.println("Dane czytelnikow \n\n\n");
 							while (rs.next())
