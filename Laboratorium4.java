@@ -36,7 +36,7 @@ public static void main (String[] args)
            e.printStackTrace();
     	}
 
-	while(run)
+	while(czy_dziala)
 		{
 			System.out.println("\nMENU");
 			System.out.println("1. Dodaj nowego czytelnika");
@@ -102,7 +102,7 @@ public static void main (String[] args)
 						}
 					case 4:
 					default:
-						   run = false;System.exit(0);
+						   czy_dziala= false;System.exit(0);
 						
 				}
 		}
