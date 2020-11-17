@@ -64,18 +64,21 @@ public static void main (String[] args)
 							
 							System.out.print("Miejscowosc: ");
 							String miejscowosc= scanner.nextLine();
-							
+							try{
 							String insert1 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES(?,?,?,?)"; 
 							PreparedStatement dane = conn.prepareStatement(insert1);
 							dane.setString(1, imie);
 							dane.setString(2,nazwisko);
 							dane.setInt(3,rok_ur);
 							dane.setString(4, miejscowosc);
-							dane.execute();
+							dane.execute();}
+							catch (SQLException e)
+							{e.printStackTrace();}
 							break;
 						}
 					case 2: 
 						{
+							try {
 							String select1 = "Select * from czytelnicy";
 							Statement st = (Statement) conn.createStatement();
 							ResultSet rs = st.executeQuery(select1);
@@ -88,18 +91,27 @@ public static void main (String[] args)
 								Integer rok = rs.getInt("rok");
 								String miejscowosc = rs.getString("miejscowosc");
 								
-								System.out.println(id_uzytkownika+" "+imie+" "+nazwisko+ ", "+miejscowosc+" "+rok );break;
+								System.out.println(id_uzytkownika+" "+imie+" "+nazwisko+ ", "+miejscowosc+" "+rok );} 
+								catch (SQLException e) {
+           					    		   e.printStackTrace();
+               								}break;
 							}
 						}
 					case 3: 
 						{
+							try{
 							System.out.println("Podaj id czytelnika którego chceesz usunac");
 							Integer id = scanner.nextInt();
 							String delete1 = "DELETE FROM czytelnicy WHERE id_uzytkownika = ?";
 							PreparedStatement wartosc = conn.prepareStatement(delete1);
 							wartosc.setInt(1,id);
 							wartosc.execute(); 
-							System.out.println("Usunieto");break;
+							System.out.println("Usunieto");
+							}
+							catch (SQLException e) {
+               						   e.printStackTrace();
+             						  }
+							break;
 						}
 					case 4:
 					default:
