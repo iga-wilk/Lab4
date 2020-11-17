@@ -13,6 +13,7 @@ public static void main (String[] args)
 	Scanner scanner = new Scanner(System.in);
 	int wybor;
 	boolean czy_działa = true;
+	Connection conn = null;
 	try
 	{
 		Class.forName("com.mysql.jdbc.Driver");
@@ -59,7 +60,7 @@ public static void main (String[] args)
 							String nazwisko = scanner.nextLine();
 
 							System.out.print("Rok urodzenia: ");
-							Int rok_ur = scanner.nextInt();
+							Integer rok_ur = scanner.nextInt();
 							
 							System.out.print("Miejscowosc: ");
 							String miejscowosc= scanner.nextLine();
@@ -81,10 +82,10 @@ public static void main (String[] args)
 							System.out.println("Dane czytelnikow \n\n\n");
 							while (rs.next())
 							{
-								int id_uzytkownika = rs.getInt("id_uzytkownika");
+								Integer id_uzytkownika = rs.getInt("id_uzytkownika");
 								String imie = rs.getString("imie");
 								String nazwisko = rs.getString("nazwisko");
-								int rok = rs.getInt("rok");
+								Integer rok = rs.getInt("rok");
 								String miejscowosc = rs.getString("miejscowosc");
 								
 								System.out.printl(id+" "+imie+" "+nazwisko+ ", "+miejscowosc+" "+rok );break;
@@ -93,7 +94,7 @@ public static void main (String[] args)
 					case 3: 
 						{
 							System.out.println("Podaj id czytelnika którego chceesz usunac");
-							Int id = scanner.nextint();
+							Integer id = scanner.nextint();
 							String delete1 = "DELETE FROM czytelnicy WHERE id_uzytkownika = ?";
 							PreparedStatement wartosc = conn.prepareStatement(query);
 							wartosc.setInt(1,id);
