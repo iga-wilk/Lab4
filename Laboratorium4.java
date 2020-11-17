@@ -20,21 +20,14 @@ public static void main (String[] args)
 		Statement st = conn.createStatement();
 		st.executeUpdate("CREATE DATABASE IF NOT EXISTS biblioteka");    //utworzenie bazy
 		st.executeUpdate("USE"+dbName);  //przejście do bazy
-		st.executeUpdate("CREATE TABLE IF NOT EXISTS czytelnicy (
-						id_uzytkownika INT(5) AUTO_INCREMENT,
-						imie VARCHAR(30),
-						nazwisko VARCHAR(30),
-						rok_urodzenia INT(4),
-						miejscowosc VARCHAR(100),
-						PRIMARY KEY(id_uzytkownika));
-				");
-	String doosoby1 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES("Iga","W",1997,"Lublin")"	
+		st.executeUpdate("CREATE TABLE IF NOT EXISTS czytelnicy (id_uzytkownika INT(5) AUTO_INCREMENT,imie VARCHAR(30),nazwisko VARCHAR(30),rok_urodzenia INT(4),miejscowosc VARCHAR(100),PRIMARY KEY(id_uzytkownika));");
+	String doosoby1 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES("Iga","W",1997,"Lublin")";	
 		PreparedStatement osoba1= conn.prepareStatement(doosoby1);
 		osoba1.execute();
-	String doosoby2 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES("Michal","akacjowy",1678,"Lublin")"	
+	String doosoby2 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES("Michal","akacjowy",1678,"Lublin")";	
 		PreparedStatement osoba2= conn.prepareStatement(doosoby2);
 		osoba2.execute();
-	String doosoby3 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES("Iza","Wolska",2000,"Lublin")"	
+	String doosoby3 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES("Iza","Wolska",2000,"Lublin")";	
 		PreparedStatement osoba1= conn.prepareStatement(doosoby3);
 		osoba3.execute();
 	}
@@ -65,10 +58,10 @@ public static void main (String[] args)
 							System.out.print("Nazwisko: ");
 							String nazwisko = scanner.nextLine();
 
-							System.out.print("Rok urodzenia: );
+							System.out.print("Rok urodzenia: ");
 							Int rok_ur = scanner.nextInt();
 							
-							System.out.print("Miejscowosc: );
+							System.out.print("Miejscowosc: ");
 							String miejscowosc= scanner.nextLine();
 							
 							String insert1 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES(?,?,?,?)"; 
