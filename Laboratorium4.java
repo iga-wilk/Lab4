@@ -58,10 +58,10 @@ public static void main (String[] args)
 							System.out.print("Nazwisko: ");
 							String nazwisko = scanner.nextLine();
 
-							System.out.print("Rok urodzenia: );
+							System.out.print("Rok urodzenia: ");
 							Int rok_ur = scanner.nextInt();
 							
-							System.out.print("Miejscowosc: );
+							System.out.print("Miejscowosc: ");
 							String miejscowosc= scanner.nextLine();
 							
 							String insert1 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES(?,?,?,?)"; 
@@ -75,7 +75,7 @@ public static void main (String[] args)
 						}
 					case 2: 
 						{
-							Statemenent st (Statement) conn.createStatement();
+							Statemenent st (Statement)= conn.createStatement();
 							String select1 = "Select * from czytelnicy";
 							ResultSet rs = st.executeQuery(select1);
 							System.out.println("Dane czytelnikow \n\n\n");
@@ -98,11 +98,11 @@ public static void main (String[] args)
 							PreparedStatement wartosc = conn.prepareStatement(query);
 							wartosc.setInt(1,id);
 							wartosc.execute(); 
-							System.out.println("Usunieto);break;
+							System.out.println("Usunieto");break;
 						}
 					case 4:
 					default:
-						   {run = false;System.exit(0);}
+						   run = false;System.exit(0);
 						
 				}
 		}
