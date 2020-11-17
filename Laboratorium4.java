@@ -12,7 +12,7 @@ public static void main (String[] args)
 
 	Scanner scanner = new Scanner(System.in);
 	int wybor;
-	boolean czy_działa = true;
+	boolean czy_dziala = true;
 	Connection conn = null;
 	try
 	{
@@ -69,7 +69,7 @@ public static void main (String[] args)
 							PreparedStatement dane = conn.prepareStatement(insert1);
 							dane.setString(1, imie);
 							dane.setString(2,nazwisko);
-							dane.setString(3,rok_ur);
+							dane.setInt(3,rok_ur);
 							dane.setString(4, miejscowosc);
 							dane.execute();
 							break;
@@ -94,9 +94,9 @@ public static void main (String[] args)
 					case 3: 
 						{
 							System.out.println("Podaj id czytelnika którego chceesz usunac");
-							Integer id = scanner.nextint();
+							Integer id = scanner.nextInt();
 							String delete1 = "DELETE FROM czytelnicy WHERE id_uzytkownika = ?";
-							PreparedStatement wartosc = conn.prepareStatement(query);
+							PreparedStatement wartosc = conn.prepareStatement(delete1);
 							wartosc.setInt(1,id);
 							wartosc.execute(); 
 							System.out.println("Usunieto");break;
