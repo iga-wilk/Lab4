@@ -17,7 +17,7 @@ public static void main (String[] args)
 	try
 	{
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql?serverTimezone=UTC",uzytkownik,haslo);
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql?serverTimezone=UTC",uzytkownik,haslo);
 		Statement st = conn.createStatement();
 		st.executeUpdate("CREATE DATABASE IF NOT EXISTS biblioteka");    //utworzenie bazy
 		st.executeUpdate("USE"+dbName);  //przejście do bazy
@@ -88,7 +88,7 @@ public static void main (String[] args)
 								Integer rok = rs.getInt("rok");
 								String miejscowosc = rs.getString("miejscowosc");
 								
-								System.out.printl(id+" "+imie+" "+nazwisko+ ", "+miejscowosc+" "+rok );break;
+								System.out.printl(id.toString()+" "+imie+" "+nazwisko+ ", "+miejscowosc+" "+rok );break;
 							}
 						}
 					case 3: 
