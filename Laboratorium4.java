@@ -28,7 +28,7 @@ public static void main (String[] args)
 		PreparedStatement osoba2= conn.prepareStatement(doosoby2);
 		osoba2.execute();
 	String doosoby3 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES('Iza','Wolska',2000,'Lublin')";	
-		PreparedStatement osoba1= conn.prepareStatement(doosoby3);
+		PreparedStatement osoba3= conn.prepareStatement(doosoby3);
 		osoba3.execute();
 	}
  	catch (ClassNotFoundException | SQLException e) 
