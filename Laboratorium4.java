@@ -88,7 +88,7 @@ public static void main (String[] args)
 								Integer rok = rs.getInt("rok");
 								String miejscowosc = rs.getString("miejscowosc");
 								
-								System.out.printl(id.toString()+" "+imie+" "+nazwisko+ ", "+miejscowosc+" "+rok );break;
+								System.out.printl(id_uzytkownika+" "+imie+" "+nazwisko+ ", "+miejscowosc+" "+rok );break;
 							}
 						}
 					case 3: 
