@@ -22,7 +22,7 @@ public static void main (String[] args)
 	try
 	{
 		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/biblioteka?serverTimezone=UTC",uzytkownik,haslo);
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/biblioteka",uzytkownik,haslo);
 		Statement st = conn.createStatement();
 		st.executeUpdate("CREATE DATABASE IF NOT EXISTS biblioteka");    //utworzenie bazy
 		st.executeUpdate("USE"+dbName);  //przejście do bazy
