@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Laboratorium4 {
 
 	static final String dbName = "biblioteka";
-	static final String uzytkownik = "IWilk";
+	static final String uzytkownik = "root";
 	static final String haslo = "wilkiga";
 
 public static void main (String[] args)
