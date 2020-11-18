@@ -53,16 +53,16 @@ public static void main (String[] args)
 						{   //Dodawanie czytelnika
 							System.out.println("Dodaj nowego czytelnika: ");
 							System.out.print("Imie: ");
-							String imie = scanner.nextLine();
+							String imie = scanner.next();
 
 							System.out.print("Nazwisko: ");
-							String nazwisko = scanner.nextLine();
+							String nazwisko = scanner.next();
 
 							System.out.print("Rok urodzenia: ");
 							Integer rok_ur = scanner.nextInt();
 							
 							System.out.print("Miejscowosc: ");
-							String miejscowosc= scanner.nextLine();
+							String miejscowosc= scanner.next();
 							try{
 							String insert1 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES(?,?,?,?)"; 
 							PreparedStatement dane = conn.prepareStatement(insert1);
