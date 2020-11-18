@@ -66,7 +66,7 @@ public static void main (String[] args)
 							try{
 							String insert1 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES(?,?,?,?)"; 
 							PreparedStatement dane = conn.prepareStatement(insert1);
-								System.out.print(imie);
+								System.out.print(nazwisko);
 							dane.setString(1, imie);
 							dane.setString(2,nazwisko);
 							dane.setInt(3,rok_ur);
