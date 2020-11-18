@@ -36,13 +36,7 @@ public static void main (String[] args)
 	String doosoby3 = "INSERT INTO czytelnicy (imie,nazwisko,rok_urodzenia,miejscowosc) VALUES('Iza','Wolska',2000,'Lublin')";	
 		PreparedStatement osoba3= conn.prepareStatement(doosoby3);
 		osoba3.execute();
-	}
- 	catch (ClassNotFoundException | SQLException e) 
-	{
-           System.out.println("BRAK polaczenia!!");
-    	}
-
-	while(czy_dziala)
+		while(czy_dziala)
 		{
 			System.out.println("\nMENU");
 			System.out.println("1. Dodaj nowego czytelnika");
@@ -126,6 +120,13 @@ public static void main (String[] args)
 				}
 		}
 
+	}
+ 	catch (ClassNotFoundException | SQLException e) 
+	{
+           System.out.println("BRAK polaczenia!!");
+    	}
+
+	
 
 
 
