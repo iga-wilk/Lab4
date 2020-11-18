@@ -94,7 +94,7 @@ public static void main (String[] args)
 								
 							}
 							catch (SQLException e) {
-           					    		   e.printStackTrace();
+           					    		   System.out.println("Buuuuuuu");;
                								}break;
 						}
 					case 3: 
