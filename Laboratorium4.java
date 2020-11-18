@@ -18,11 +18,11 @@ public static void main (String[] args)
 	Scanner scanner = new Scanner(System.in);
 	int wybor;
 	boolean czy_dziala = true;
-	Connection conn = null;
+	Connection conn;
 	try
 	{
 		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql?serverTimezone=UTC",uzytkownik,haslo);
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/biblioteka?serverTimezone=UTC",uzytkownik,haslo);
 		Statement st = conn.createStatement();
 		st.executeUpdate("CREATE DATABASE IF NOT EXISTS biblioteka");    //utworzenie bazy
 		st.executeUpdate("USE"+dbName);  //przejście do bazy
