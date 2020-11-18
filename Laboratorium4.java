@@ -104,6 +104,8 @@ public static void main (String[] args)
 							System.out.println("Podaj id czytelnika którego chceesz usunac");
 							Integer id = scanner.nextInt();
 							String delete1 = "DELETE FROM czytelnicy WHERE id_uzytkownika = ?";
+								System.out.println("Podaj id czytelnika którego chceesz usunac");
+								System.out.println(id);
 							PreparedStatement wartosc = conn.prepareStatement(delete1);
 							wartosc.setInt(1,id);
 							wartosc.execute(); 
