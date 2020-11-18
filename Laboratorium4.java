@@ -39,7 +39,7 @@ public static void main (String[] args)
 	}
  	catch (ClassNotFoundException | SQLException e) 
 	{
-           e.printStackTrace();
+           System.out.println("BRAK polaczenia!!");
     	}
 
 	while(czy_dziala)
